@@ -1,0 +1,7 @@
+import requests
+from bs4 import BeautifulSoup
+website = input()
+soup = BeautifulSoup(requests.get(website).content, 'html.parser')
+text=soup.get_text()
+word = input()
+print(text.upper().count(word.upper()))
